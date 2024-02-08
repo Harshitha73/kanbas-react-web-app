@@ -1,0 +1,43 @@
+ .breadcrumb-item+.breadcrumb-item::before {
+
+    content: ">";
+
+    color: black;
+
+}
+
+.wd-margin {
+    border-color: black;
+    border-style:solid;
+  }
+
+  .wd-import-export-button{
+    border: none; 
+    background-color: lightgray; 
+    border-radius: 0%;
+  }
+
+  .wd-custom-table th, .wd-custom-table td {
+    border: 1px solid black;
+    white-space: nowrap;
+}
+
+.wd-custom-table th{
+  white-space: nowrap; text-align: center;
+}
+
+.wd-table-container {
+  overflow-x: auto;
+}
+
+.wd-table-header {
+  position: sticky;
+  top: 0;
+  background-color: lightgray;
+  z-index: 1;
+}
+
+.wd-table-body {
+  overflow-y: auto;
+  max-height: 300px; /* Set a maximum height if needed */
+}

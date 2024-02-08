@@ -1,0 +1,57 @@
+.wd-kanbas-navigation {
+    background-color: black;
+    list-style: none;
+    padding: 0px;  
+    margin: 0px;
+    width: 80px;
+  }
+  .wd-kanbas-navigation li {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 0.8em;  
+    text-align: center;
+  }
+  .wd-kanbas-navigation li.wd-active {
+    background-color: white;
+  }
+  .wd-kanbas-navigation li.wd-active a {
+    color: red;
+  }
+  .wd-kanbas-navigation li.wd-account a i{
+    color: lightgray;
+  }
+  .wd-kanbas-navigation a {
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+  }
+  .wd-kanbas-navigation a i {
+    color: red;
+    font-size: 2em;
+    margin-bottom: 5px;
+    margin: 5px;
+  }    
+  .wd-small-kanbas-navigation{
+    list-style: none;
+    font-size: 1.5em;
+  }
+  .wd-small-kanbas-navigation a{
+    text-decoration: none;
+  }
+  .wd-small-kanbas-navigation li{
+    padding: 2%;
+    color: red;
+  }
+
+  .wd-small-kanbas-navigation li.wd-account  i{
+    color: gray;
+  }
+
+  .wd-small-kanbas-navigation a{
+    color: red;
+  }
+
+  .wd-small-kanbas-navigation li i{
+    padding-right: 2%;
+    color: red;
+  }
