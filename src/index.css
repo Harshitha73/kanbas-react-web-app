@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.wd-grades-table{
+  text-align: center;
+}
+.wd-import-export-button{
+  border: none; 
+  background-color: lightgray; 
+  border-radius: 0%;
+}
