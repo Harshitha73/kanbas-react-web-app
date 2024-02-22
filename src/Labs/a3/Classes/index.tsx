@@ -17,7 +17,9 @@ function Classes() {
      <div className="wd-bg-blue wd-fg-black wd-padding-10px">
        Blue background     </div>
      <div className="wd-bg-red wd-fg-black wd-padding-10px">
-       Red background     </div>
+       Red background     
+       </div>
+       
    </div> ) };
 export default Classes;
 

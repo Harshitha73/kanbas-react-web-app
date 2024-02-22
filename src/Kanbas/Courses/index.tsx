@@ -17,6 +17,10 @@ function Courses() {
   const location = useLocation();
   const course = courses.find((course) => course._id === courseId);
   const paths = location.pathname.split("/");
+
+// Get the second-to-last item (index -2) or handle cases where there may not be enough segments
+const secondToLastSegment = paths.length >= 2 ? paths[paths.length - 2] : '';
+
   // Get the last path in the URL
   const lastPath = paths[paths.length - 1];
   return (
@@ -25,8 +29,20 @@ function Courses() {
       <div className="d-flex align-items-center custom-breadcrumb-item">
         <Breadcrumb className="custom-crumb">
           <BreadcrumbItem><HiMiniBars3/>   <span>{course?.name}</span></BreadcrumbItem>
-          <BreadcrumbItem><span style={{color:'black'}}>{lastPath}</span></BreadcrumbItem>
-        </Breadcrumb>
+          {secondToLastSegment === 'Assignments' ? (
+    <>
+      <BreadcrumbItem><span style={{color:'black'}}>{secondToLastSegment}</span></BreadcrumbItem>
+      <BreadcrumbItem>
+      <span style={{color:'black'}}>{lastPath}</span>
+      </BreadcrumbItem>
+    </>
+  ) : (
+    <BreadcrumbItem>
+      <span style={{color:'black'}}>{lastPath}</span>
+    </BreadcrumbItem>
+  )}
+  
+</Breadcrumb>
         <span style={{marginLeft: 'auto', width: 'max-content', boxSizing:"unset"}}><button style={{width: 'max-content'}}><PiEyeglassesLight style={{paddingRight:'2px'}}/>Student View</button></span>
       </div>
       <hr/> 
