@@ -9,9 +9,10 @@ import AssignmentEditor from "./Assignments/Editor";
 import Grades from "./Grades";
 import { useLocation } from "react-router-dom";
 import React from "react";
-import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
+import { Breadcrumb, BreadcrumbItem, Navbar } from "react-bootstrap";
 import "./index.css";
 import { PiEyeglassesLight } from "react-icons/pi";
+import { FaCaretDown } from "react-icons/fa";
 function Courses() {
   const { courseId } = useParams();
   const location = useLocation();
@@ -25,6 +26,11 @@ const secondToLastSegment = paths.length >= 2 ? paths[paths.length - 2] : '';
   const lastPath = paths[paths.length - 1];
   return (
     <div>
+      <div className="flex-fill d-sm-block d-md-none d-lg-none"
+          style={{paddingTop: '2%', backgroundColor: 'black', color: 'white', textAlign: 'center', height: '8%'}}>
+          {lastPath}
+          <span style={{float:'right'}}><FaCaretDown/></span>
+        </div>
       <div className="d-none d-md-block">
       <div className="d-flex align-items-center custom-breadcrumb-item">
         <Breadcrumb className="custom-crumb">
@@ -46,8 +52,8 @@ const secondToLastSegment = paths.length >= 2 ? paths[paths.length - 2] : '';
         <span style={{marginLeft: 'auto', width: 'max-content', boxSizing:"unset"}}><button style={{width: 'max-content'}}><PiEyeglassesLight style={{paddingRight:'2px'}}/>Student View</button></span>
       </div>
       <hr/> 
-      </div>
       
+      </div>
       <div className="d-flex">
       <CourseNavigation />
         <div className="flex-grow-1 bottom-0 end-0"

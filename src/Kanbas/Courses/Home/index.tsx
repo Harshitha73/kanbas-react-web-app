@@ -9,7 +9,7 @@ function Home() {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-9">
+                <div className="col-9" style={{width:'100%'}}>
                     <ModuleList />
                 </div>
                 <div className="col-3 wd-decoration d-none d-md-block">

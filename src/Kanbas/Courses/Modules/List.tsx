@@ -10,11 +10,11 @@ function ModuleList() {
   const [selectedModule, setSelectedModule] = useState(modulesList[0]);
   return (
     <>
-      <div style={{ paddingBottom: '1.5px'}}>
+      <div style={{ paddingBottom: '1.5px', width:'100%'}}>
         <Buttons/>
       </div>
       <br/><hr/>
-      <ul className="list-group wd-modules">
+      <ul className="list-group wd-modules" style={{width:'100%'}}>
         {modulesList.map((module) => (
           <li
             className="list-group-item"
