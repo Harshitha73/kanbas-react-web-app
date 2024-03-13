@@ -30,7 +30,7 @@ function Assignments() {
                             <FaPlus  className="ms-2" /><FaEllipsisV className="ms-2" />
                         </span>
                     </div>
-                    <ul className="list-group">
+                    <ul className="list-group" style={{width:"100%"}}>
                         {assignmentList.map((assignment) => (
                             <li className="list-group-item">
                                 <FaEllipsisV className="me-2" />
