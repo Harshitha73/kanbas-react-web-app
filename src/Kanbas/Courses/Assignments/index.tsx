@@ -15,6 +15,14 @@ function Assignments() {
     function addAssignmentEvent(){
         navigate(`/Kanbas/Courses/${courseId}/Assignments/Editor`);
     }
+
+    const handleDeleteAssignment = (assignmentId: string) => {
+        const confirmed = window.confirm("Do you want to delete?");
+        if (confirmed) {
+            dispatch(deleteAssignment(assignmentId));
+        }
+    };
+    
     return (
         <>
 
@@ -43,7 +51,7 @@ function Assignments() {
                                 <FaEllipsisV className="me-2" />
                                 <FaFileSignature className="me-2" style={{color:"green"}}/>
                                 <span className="float-end">
-                                <button style={{backgroundColor:'red', color:'white', borderRadius:"0%"}} onClick={() => dispatch(deleteAssignment(assignment._id))}>Delete</button>
+                                <button style={{backgroundColor:'red', color:'white', borderRadius:"0%"}} onClick={() => handleDeleteAssignment(assignment._id)}>Delete</button>
                                 <FaCheckCircle className="text-success ms-2" /><FaEllipsisV className="ms-2" /></span>
                                 <Link
                                     to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`} style={{textDecoration:'none', color:'black', fontWeight:'bold'}}>{assignment.title}</Link>

@@ -8,11 +8,12 @@ import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
 import Grades from "./Grades";
 import { useLocation } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 import { Breadcrumb, BreadcrumbItem, Navbar } from "react-bootstrap";
 import "./index.css";
 import { PiEyeglassesLight } from "react-icons/pi";
 import { FaCaretDown } from "react-icons/fa";
+import SmallNavigation from "../Navigation/smallNav";
 function Courses({ courses }: { courses: any[]; }) {
   const { courseId } = useParams();
   const location = useLocation();
@@ -24,13 +25,32 @@ const secondToLastSegment = paths.length >= 2 ? paths[paths.length - 2] : '';
 
   // Get the last path in the URL
   const lastPath = paths[paths.length - 1];
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownOpen((prevState) => !prevState);
+  };
+
   return (
     <div>
       <div className="flex-fill d-sm-block d-md-none d-lg-none"
           style={{paddingTop: '2%', backgroundColor: 'black', color: 'white', textAlign: 'center', height: '8%'}}>
           {lastPath}
-          <span style={{float:'right'}}><FaCaretDown/></span>
+          
+          <div className="dropdown" style={{ position: "relative" }}>
+          <button onClick={toggleDropdown} className="dropbtn">
+            <FaCaretDown />
+          </button>
+          {dropdownOpen && <SmallNavigation />}
+        <div
+          className="dropdown"
+          style={{ position: "relative", display: dropdownOpen ? "none" : "block" }}
+        >
         </div>
+      </div>
+      </div>
+        {!dropdownOpen && (
       <div className="d-none d-md-block">
       <div className="d-flex align-items-center custom-breadcrumb-item">
         <Breadcrumb className="custom-crumb">
@@ -54,6 +74,7 @@ const secondToLastSegment = paths.length >= 2 ? paths[paths.length - 2] : '';
       <hr/> 
       
       </div>
+       )}
       <div className="d-flex">
       <CourseNavigation />
         <div className="flex-grow-1 bottom-0 end-0"
