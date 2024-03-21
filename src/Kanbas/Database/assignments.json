@@ -1,11 +1,11 @@
 [
-    { "_id": "A101", "title": "Propulsion Assignment", "course": "RS101", "due": "March 20 at 11:59PM" },
-    { "_id": "A102", "title": "Combustion Analysis", "course": "RS101", "due": "March 28 at 11:59PM" },
-    { "_id": "A103", "title": "Nozzle Design Project", "course": "RS101", "due": "February 20 at 11:59PM" },
-    { "_id": "A201", "title": "Aerodynamics Quiz", "course": "RS102", "due": "March 2 at 11:59PM" },
-    { "_id": "A202", "title": "Flow Analysis", "course": "RS102", "due": "March 12 at 11:59PM" },
-    { "_id": "A203", "title": "Heating Analysis", "course": "RS102", "due": "April 20 at 11:59PM" },
-    { "_id": "A301", "title": "Structural Design Task", "course": "RS103", "due": "April 2 at 11:59PM" },
-    { "_id": "A302", "title": "Orbital Calculations", "course": "RS103", "due": "March 18 at 11:59PM" },
-    { "_id": "A303", "title": "Systems Engineering Exam", "course": "RS103", "due": "March 18 at 11:59PM" }
+    { "_id": "A101", "title": "Propulsion Assignment","description": "Propulsion Assignment description", "course": "RS101", "due": "2025-03-20" },
+    { "_id": "A102", "title": "Combustion Analysis", "description": "Combustion Analysis description", "course": "RS101", "due": "2025-03-28" },
+    { "_id": "A103", "title": "Nozzle Design Project","description": "Nozzle Design Project description", "course": "RS101", "due": "2025-02-20" },
+    { "_id": "A201", "title": "Aerodynamics Quiz","description": "Aerodynamics Quiz description", "course": "RS102", "due": "2025-03-02" },
+    { "_id": "A202", "title": "Flow Analysis","description": "Flow Analysis description", "course": "RS102", "due": "2025-03-12" },
+    { "_id": "A203", "title": "Heating Analysis","description": "Heating Analysis description", "course": "RS102", "due": "2025-04-20" },
+    { "_id": "A301", "title": "Structural Design Task","description": "Structural Design Task description", "course": "RS103", "due": "2025-04-05" },
+    { "_id": "A302", "title": "Orbital Calculations","description": "Orbital Calculations description", "course": "RS103", "due": "2025-03-08" },
+    { "_id": "A303", "title": "Systems Engineering Exam","description": "Systems Engineering Exam description", "course": "RS103", "due": "2025-03-18" }
   ]

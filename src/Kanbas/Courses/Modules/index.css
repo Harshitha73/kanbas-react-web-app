@@ -54,3 +54,13 @@
   border-radius: 0%;
   padding: 6px 10px;
 }
+
+.wd-modules button{
+  border-radius: 10%;
+  padding: 2px 5px;
+}
+
+.wd-modules footer{
+  margin-left: 4%;
+  font-weight: 200;
+}

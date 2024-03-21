@@ -9,9 +9,10 @@ function Home() {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-9" style={{width:'100%'}}>
+                <div className="col-9">
                     <ModuleList />
                 </div>
+                
                 <div className="col-3 wd-decoration d-none d-md-block">
                     <div className="list-group">
                         <a href="#" className="list-group-item list-group-item-action list-group-item-light"><FaFileImport style={{ paddingRight: '2px' }} />Import Existing Content</a>

@@ -1,21 +1,65 @@
 import React from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import assignments from "../../../Database/assignments.json";
+import { addAssignment, setAssignment, updateAssignment } from "../reducer";
+import { useDispatch, useSelector } from "react-redux";
+import { KanbasState } from "../../../store";
+import { useEffect } from "react";
 function AssignmentEditor() {
-  const { assignmentId } = useParams();
-  const assignment = assignments.find(
-    (assignment) => assignment._id === assignmentId);
   const { courseId } = useParams();
+  const { assignmentId } = useParams();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const assignment = useSelector(
+    (state: KanbasState) => state.assignmentsReducer.assignment
+  );
+    const assignmentList = useSelector(
+      (state: KanbasState) => state.assignmentsReducer.assignments
+    );
+    useEffect(() => {
+      if (assignmentId !== undefined) {
+        if (assignmentId.localeCompare("Editor")) {
+          const a = assignmentList.find(
+            (assignment) => assignment._id === assignmentId
+          );
+          dispatch(setAssignment(a));
+        } else {
+          dispatch(
+            setAssignment({
+              _id: "",
+              title: "New Assignment",
+              description: "New Assignment Description",
+              due: "2024-10-10",
+            })
+          );
+        }
+      }
+    }, []);
+  
   const handleSave = () => {
-    console.log("Actually saving assignment TBD in later assignments");
+    if (assignmentId !== undefined) {
+      if (!assignmentId.localeCompare("Editor")) {
+        dispatch(addAssignment({ ...assignment, course: courseId }));
+      } else {
+        dispatch(updateAssignment(assignment));
+      }
+    }
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
   return (
     <div className="container">
       
       <h2>Assignment Name</h2>
-      <input value={assignment?.title} className="form-control mb-2" />
+      <input value={assignment?.title} className="form-control mb-2"  onChange={(e) =>
+              dispatch(
+                setAssignment({ ...assignment, title: e.target.value })
+              )
+            }/>
+      <input value={assignment?.description} className="form-control mb-2"  onChange={(e) =>
+              dispatch(
+                setAssignment({ ...assignment, description: e.target.value })
+              )
+            }/>
       <div className="row">
         <label htmlFor="points" className="col-sm-2">Points</label>
         <div className="col-sm-8">
@@ -53,7 +97,7 @@ function AssignmentEditor() {
             <input className="form-control" value="Everyone" />
             <br />
             <label><b>Due</b></label>
-            <input className="form-control" type="date" />
+            <input className="form-control" type="date" value={assignment?.due} onChange={(e) => dispatch(setAssignment({ ...assignment, due: e.target.value }))}/>
             <br />
             <div className="row">
               <div className="col-md-6">
@@ -91,4 +135,3 @@ function AssignmentEditor() {
   );
 }
 export default AssignmentEditor;
-

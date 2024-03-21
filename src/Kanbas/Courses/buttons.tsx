@@ -5,8 +5,8 @@ function Buttons(){
 return(
   <div className='d-none d-md-block'>
     <div style={{float:'right', display: 'flex', gap: '10px'}} className="wd-button">
-    <button>Collapse All</button>
-    <button>View Progress</button>
+    <Button variant="outline-secondary" style={{color:'black', backgroundColor:"lightgray"}}>Collapse All</Button>
+    <Button variant="outline-secondary" style={{color:'black', backgroundColor:"lightgray"}}>View Progress</Button>
     <Dropdown>
         <Button variant="outline-secondary" style={{color:'black'}}><FaRegCheckCircle style={{paddingRight:'2px'}}/>Publish All</Button>
         <Dropdown.Toggle variant="outline-secondary" style={{color:'black'}}/>

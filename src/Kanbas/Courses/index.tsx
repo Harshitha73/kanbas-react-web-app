@@ -13,7 +13,7 @@ import { Breadcrumb, BreadcrumbItem, Navbar } from "react-bootstrap";
 import "./index.css";
 import { PiEyeglassesLight } from "react-icons/pi";
 import { FaCaretDown } from "react-icons/fa";
-function Courses() {
+function Courses({ courses }: { courses: any[]; }) {
   const { courseId } = useParams();
   const location = useLocation();
   const course = courses.find((course) => course._id === courseId);
