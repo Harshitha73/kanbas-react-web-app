@@ -6,6 +6,7 @@ import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
+import Quizzes from "./Quizzes";
 import Grades from "./Grades";
 import { useLocation } from "react-router-dom";
 import React, { useState } from "react";
@@ -87,7 +88,7 @@ const secondToLastSegment = paths.length >= 2 ? paths[paths.length - 2] : '';
             <Route path="ZoomMeetings" element={<h1>Zoom Meetings</h1>} />
             <Route path="Assignments" element={<Assignments/>} />
             <Route path="Assignments/:assignmentId" element={<AssignmentEditor/>} />
-            <Route path="Quizzes" element={<h1>Quizzes</h1>} />
+            <Route path="Quizzes" element={<Quizzes/>} />
             <Route path="Grades" element={<Grades/>} />
             <Route path="People" element={<h1>People</h1>} />
             <Route path="PanoptoVideo" element={<h1>Panopto Video</h1>} />
