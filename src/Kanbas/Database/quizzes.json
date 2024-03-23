@@ -1,0 +1,11 @@
+[
+    { "_id": "Q101", "title": "Propulsion Quiz","description": "Propulsion Quiz description", "course": "RS101", "due": "2025-03-20" },
+    { "_id": "Q102", "title": "Combustion Analysis", "description": "Combustion Analysis description", "course": "RS101", "due": "2025-03-28" },
+    { "_id": "Q103", "title": "Nozzle Design Project","description": "Nozzle Design Project description", "course": "RS101", "due": "2025-02-20" },
+    { "_id": "Q201", "title": "Aerodynamics Quiz","description": "Aerodynamics Quiz description", "course": "RS102", "due": "2025-03-02" },
+    { "_id": "Q202", "title": "Flow Analysis","description": "Flow Analysis description", "course": "RS102", "due": "2025-03-12" },
+    { "_id": "Q203", "title": "Heating Analysis","description": "Heating Analysis description", "course": "RS102", "due": "2025-04-20" },
+    { "_id": "Q301", "title": "Structural Design Task","description": "Structural Design Task description", "course": "RS103", "due": "2025-04-05" },
+    { "_id": "Q302", "title": "Orbital Calculations","description": "Orbital Calculations description", "course": "RS103", "due": "2025-03-08" },
+    { "_id": "Q303", "title": "Systems Engineering Exam","description": "Systems Engineering Exam description", "course": "RS103", "due": "2025-03-18" }
+  ]
