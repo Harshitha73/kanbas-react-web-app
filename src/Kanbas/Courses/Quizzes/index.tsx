@@ -28,6 +28,13 @@ function Quizzes() {
     const handlePublishToggle = (quizId: string, published: boolean) => {
         dispatch(togglePublishQuiz({ quizId, published: !published }));
     };
+    let currentDate = new Date();
+
+// Subtract one day
+currentDate.setDate(currentDate.getDate() - 1);
+
+// Convert the new date to a string
+let previousDate = currentDate.toDateString();
     return (
         <>
             <input type="text" placeholder="Search for Quiz" className="float-start" />
@@ -46,16 +53,16 @@ function Quizzes() {
                         <>
                             {quizList.filter((quiz) => quiz.course === courseId).length === 0 ? (
                                 <ul >
-                                    <li className="list-group-item" style={{textAlign:"center", borderLeftColor:"black", borderLeftWidth:"1px"}}>
+                                    <li className="list-group-item" style={{ textAlign: "center", borderLeftColor: "black", borderLeftWidth: "1px" }}>
                                         No Quizzes available!
-                                        <br/><br/>
-                                        Add new quizzes using <span style={{color:"red"}}>+Quiz</span> button above.
+                                        <br /><br />
+                                        Add new quizzes using <span style={{ color: "red" }}>+Quiz</span> button above.
                                     </li>
                                 </ul>
                             ) : (
                                 <ul className="list-group" style={{ width: "100%" }}>
                                     {quizList.filter((quiz) => quiz.course === courseId).map((quiz) => (
-                                        <li className="list-group-item" key={quiz._id} onClick={() => setQuiz(quiz)}>
+                                        <li className="list-group-item" key={quiz._id} onClick={() => setQuiz(quiz)} style={{ borderLeft: quiz.published ? "3px solid green" : "1px solid black" }}>
                                             <IoRocketSharp className="me-2" style={{ color: "green" }} />
                                             <span className="float-end">
                                                 <Dropdown className="float-end">
@@ -73,8 +80,16 @@ function Quizzes() {
                                                 {quiz.published ? <FaCheckCircle style={{ color: "green" }} /> : <FaTimesCircle style={{ color: "red" }} />} {/* Conditionally render success or cancel icon */}
                                             </span>
                                             {quiz.title}
-                                            <footer style={{ paddingLeft: '5%' }}><span style={{ color: 'red' }}>Multiple Modules</span> |<span style={{ color: 'black', fontWeight: 'bold' }}> Due</span> {quiz.due} at 11:59PM | 100pts</footer>
-                                        </li>))}
+                                            <footer style={{ paddingLeft: '5%' }}>
+                                                {new Date(quiz.due) < new Date() ?
+                                                    <span style={{ color: 'red' }}>Closed </span> :
+                                                    new Date(quiz.due).toDateString() === previousDate ?  //this is not working
+                                                        <span style={{ color: 'red' }}>Available until </span> :
+                                                        <span style={{ color: 'red' }}>Multiple Dates </span>
+                                                }
+                                                |<span style={{ color: 'black', fontWeight: 'bold' }}> Due</span> {quiz.due} at 11:59PM | 100pts</footer>
+                                        </li>
+                                    ))}
                                 </ul>
                             )}
                         </>
