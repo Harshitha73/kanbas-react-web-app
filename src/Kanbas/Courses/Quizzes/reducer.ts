@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import quizzes from "../../Database/quizzes.json"
+import quizzesData from "../../Database/quizzes.json"
 
+const quizzes = quizzesData as Array<any>;
 export const initialState = {
   quizzes: quizzes,
   quiz: { title: "New Quiz", description:"New Quiz Description", due: "2024-10-10" },

@@ -44,34 +44,40 @@ function Quizzes() {
                     </div>
                     {showQuizzes && (
                         <>
-                        {quizList.filter((quiz) => quiz.course === courseId).length === 0 ? (
-                            <p>No quizzes available.</p>
-                        ) : (
-                        <ul className="list-group" style={{ width: "100%" }}>
-                            {quizList.filter((quiz) => quiz.course === courseId).map((quiz) => (
-                                <li className="list-group-item" key={quiz._id} onClick={() => setQuiz(quiz)}>
-                                    <IoRocketSharp className="me-2" style={{ color: "green" }} />
-                                    <span className="float-end">
-                                        <Dropdown className="float-end">
-                                            <Dropdown.Toggle className="toggle-btn">
-                                                <FaEllipsisV />
-                                            </Dropdown.Toggle>
-                                            <Dropdown.Menu>
-                                                <Dropdown.Item onClick={() => editQuizEvent(quiz._id)}>Edit</Dropdown.Item>
-                                                <Dropdown.Item onClick={() => handleDeleteQuiz(quiz._id)}>Delete</Dropdown.Item>
-                                                <Dropdown.Item onClick={() => handlePublishToggle(quiz._id, quiz.published)}>
-                                                    {quiz.published ? "Unpublish" : "Publish"}
-                                                </Dropdown.Item>
-                                            </Dropdown.Menu>
-                                        </Dropdown>
-                                        {quiz.published ? <FaCheckCircle style={{ color: "green" }} /> : <FaTimesCircle style={{ color: "red" }} />} {/* Conditionally render success or cancel icon */}
-                                    </span>
-                                    {quiz.title}
-                                    <footer style={{ paddingLeft: '5%' }}><span style={{ color: 'red' }}>Multiple Modules</span> |<span style={{ color: 'black', fontWeight: 'bold' }}> Due</span> {quiz.due} at 11:59PM | 100pts</footer>
-                                </li>))}
-                        </ul>
-                          )}
-                          </>
+                            {quizList.filter((quiz) => quiz.course === courseId).length === 0 ? (
+                                <ul >
+                                    <li className="list-group-item" style={{textAlign:"center", borderLeftColor:"black", borderLeftWidth:"1px"}}>
+                                        No Quizzes available!
+                                        <br/><br/>
+                                        Add new quizzes using <span style={{color:"red"}}>+Quiz</span> button above.
+                                    </li>
+                                </ul>
+                            ) : (
+                                <ul className="list-group" style={{ width: "100%" }}>
+                                    {quizList.filter((quiz) => quiz.course === courseId).map((quiz) => (
+                                        <li className="list-group-item" key={quiz._id} onClick={() => setQuiz(quiz)}>
+                                            <IoRocketSharp className="me-2" style={{ color: "green" }} />
+                                            <span className="float-end">
+                                                <Dropdown className="float-end">
+                                                    <Dropdown.Toggle className="toggle-btn">
+                                                        <FaEllipsisV />
+                                                    </Dropdown.Toggle>
+                                                    <Dropdown.Menu>
+                                                        <Dropdown.Item onClick={() => editQuizEvent(quiz._id)}>Edit</Dropdown.Item>
+                                                        <Dropdown.Item onClick={() => handleDeleteQuiz(quiz._id)}>Delete</Dropdown.Item>
+                                                        <Dropdown.Item onClick={() => handlePublishToggle(quiz._id, quiz.published)}>
+                                                            {quiz.published ? "Unpublish" : "Publish"}
+                                                        </Dropdown.Item>
+                                                    </Dropdown.Menu>
+                                                </Dropdown>
+                                                {quiz.published ? <FaCheckCircle style={{ color: "green" }} /> : <FaTimesCircle style={{ color: "red" }} />} {/* Conditionally render success or cancel icon */}
+                                            </span>
+                                            {quiz.title}
+                                            <footer style={{ paddingLeft: '5%' }}><span style={{ color: 'red' }}>Multiple Modules</span> |<span style={{ color: 'black', fontWeight: 'bold' }}> Due</span> {quiz.due} at 11:59PM | 100pts</footer>
+                                        </li>))}
+                                </ul>
+                            )}
+                        </>
                     )}
                 </li>
             </ul>
