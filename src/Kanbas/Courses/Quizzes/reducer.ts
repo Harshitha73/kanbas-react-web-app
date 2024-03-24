@@ -36,10 +36,17 @@ const quizzesSlice = createSlice({
     setQuiz: (state, action) => {
       state.quiz = action.payload;
     },
+    togglePublishQuiz: (state, action) => {
+      const { quizId, published } = action.payload;
+      const quizToUpdate = state.quizzes.find((quiz) => quiz._id === quizId);
+      if (quizToUpdate) {
+        quizToUpdate.published = published;
+      }
+    },
   },
 });
 
 
 export const { addQuiz, deleteQuiz,
-  updateQuiz, setQuiz } = quizzesSlice.actions;
+  updateQuiz, setQuiz, togglePublishQuiz } = quizzesSlice.actions;
 export default quizzesSlice.reducer;

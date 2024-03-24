@@ -1,0 +1,11 @@
+.toggle-btn {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    color: black;
+  }
+  
+  /* Hide the down arrow */
+  .dropdown-toggle::after {
+    display: none !important;
+  }
