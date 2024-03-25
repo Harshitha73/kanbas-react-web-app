@@ -16,6 +16,7 @@ import "./index.css";
 import { PiEyeglassesLight } from "react-icons/pi";
 import { FaCaretDown } from "react-icons/fa";
 import SmallNavigation from "../Navigation/smallNav";
+import QuizEditor from "./Quizzes/Editor";
 function Courses({ courses }: { courses: any[]; }) {
   const { courseId } = useParams();
   const location = useLocation();
