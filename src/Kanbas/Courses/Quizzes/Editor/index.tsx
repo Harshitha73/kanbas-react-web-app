@@ -1,4 +1,3 @@
-import React from "react";
 import Details from "./Details";
 import QuizNavigation from "./Navigation";
 import { Navigate, Route, Routes } from "react-router";
