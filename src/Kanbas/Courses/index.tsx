@@ -6,7 +6,6 @@ import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
-import QuizEditor from "./Quizzes/Editor";
 import Quizzes from "./Quizzes";
 import Grades from "./Grades";
 import { useLocation } from "react-router-dom";
