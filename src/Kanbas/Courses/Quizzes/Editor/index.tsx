@@ -1,10 +1,7 @@
 import React from "react";
-
 function QuizEditor() {
  return(
-    <>
-    <h1>Quiz Editor</h1>
-    </>
+ <>Editor</>
  );
 }
 export default QuizEditor;
