@@ -17,7 +17,7 @@ function Quizzes() {
         navigate(`/Kanbas/Courses/${courseId}/Quizzes/Editor`);
     }
     const editQuizEvent = (quizId: string) => {
-        navigate(`/Kanbas/Courses/${courseId}/Quizzes/quizId`);
+        navigate(`/Kanbas/Courses/${courseId}/Quizzes/${quizId}`);
     }
     const handleDeleteQuiz = (quizId: string) => {
         const confirmed = window.confirm("Do you want to delete?");

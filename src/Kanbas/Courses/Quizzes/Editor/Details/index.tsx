@@ -5,7 +5,7 @@ import { KanbasState } from "../../../../store";
 import { setAssignment } from "../../../Assignments/reducer";
 import { useDispatch, useSelector } from "react-redux";
 import { addQuiz, setQuiz, updateQuiz } from "../../reducer";
-
+import { useEffect } from "react";
 
 function Details() {
     
@@ -15,7 +15,35 @@ function Details() {
     const assignment = useSelector(
         (state: KanbasState) => state.assignmentsReducer.assignment
       );
+
+      const quizList = useSelector(
+        (state: KanbasState) => state.quizzesReducer.quizzes
+      );
       
+
+      //USE EFFECT
+      useEffect(() => {
+        if (quizId !== undefined) {
+          if (quizId.localeCompare("Editor")) {
+            const a = quizList.find(
+              (quiz) => quiz._id === quizId
+            );
+            dispatch(setQuiz(a));
+          } else {
+            dispatch(
+              setQuiz({
+                _id: "",
+                title: "New Quizz",
+                description: "New Quizz Description",
+                due: "2024-10-10",
+              })
+            );
+          }
+        }
+      }, []);
+
+
+
       //QUIZ
       
       const quiz = useSelector(
@@ -27,6 +55,7 @@ function Details() {
         if (quizId !== undefined) {
           if (!quizId.localeCompare("Editor")) {
             dispatch(addQuiz({...quiz,course: courseId})
+            
                 );
           } else {
             dispatch(updateQuiz(quiz));
