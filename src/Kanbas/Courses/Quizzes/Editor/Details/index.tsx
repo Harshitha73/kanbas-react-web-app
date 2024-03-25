@@ -108,9 +108,9 @@ function Details() {
              <input
                className="form-control"
                type="date"
-               value={assignment?.due}
+               value={quiz?.due}
                onChange={(e) =>
-                 dispatch(setAssignment({ ...assignment, due: e.target.value }))
+                 dispatch(setQuiz({ ...quiz, due: e.target.value }))
                }
              />
              <br />
@@ -119,7 +119,8 @@ function Details() {
                  <label>
                    <b>Available from</b>
                  </label>
-                 <input className="form-control" type="date" />
+                 <input className="form-control" type="date" value={quiz?.due} onChange={(e) => dispatch(setQuiz({ ...assignment, due: e.target.value }))}/>
+            
                </div>
                <div className="col-md-6">
                  <label>
@@ -210,12 +211,24 @@ function Details() {
 
 
        <div className="row" style={{ display: "inline-flexbox" }}>
-       
          <label className="col-sm-2" ></label>
          <div className="col-sm-8  border p-2">
          <input type="checkbox" id="shuffle" />
            <label htmlFor="shuffle">
              Allow Multiple attempts
+           </label>
+         </div>
+       </div>
+       <br/>
+
+
+
+       <div className="row" style={{ display: "inline-flexbox" }}>
+         <label className="col-sm-2" ></label>
+         <div className="col-sm-8  border p-2">
+         <input type="checkbox" id="shuffle" />
+           <label htmlFor="shuffle">
+             Let Students See Their Quiz Responses
            </label>
          </div>
        </div>
