@@ -33,8 +33,8 @@ function Details() {
             dispatch(
               setQuiz({
                 _id: "",
-                title: "New Quizz",
-                description: "New Quizz Description",
+                title: "New Quiz",
+                description: "New Quiz Description",
                 due: "2024-10-10",
               })
             );

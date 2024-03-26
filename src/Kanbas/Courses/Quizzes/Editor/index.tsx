@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Nav } from "react-bootstrap";
-import { Link, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Details from "./Details";
 import Questions from "./Questions";
-
+import { FcCancel } from "react-icons/fc";
+import { FaEllipsisV } from "react-icons/fa";
 function QuizEditor() {
   const [activeTab, setActiveTab] = useState("Details");
 
@@ -13,14 +14,14 @@ function QuizEditor() {
 
   return (
     <>
-      <div>
-        <span>Points 0 </span>
-        <span>Not Published </span>
-        <span>... </span>
+      <div style={{ justifyContent:"flex-end", display:"flex", gap:"2%"}}>
+        <span>Points  0</span>
+        <span><FcCancel /> Not Published</span>
+        <span><button style={{backgroundColor:"lightgray", borderColor:"black", borderWidth:"1px"}}><FaEllipsisV/></button></span>
       </div>
-
+      <hr/>
       <div className="d-flex">
-        <Nav variant="tabs" defaultActiveKey="Details">
+        <Nav variant="tabs" defaultActiveKey="Details" className="w-100">
           <Nav.Item>
             <Link
               to=""

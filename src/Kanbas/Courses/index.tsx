@@ -57,12 +57,18 @@ const secondToLastSegment = paths.length >= 2 ? paths[paths.length - 2] : '';
       <div className="d-flex align-items-center custom-breadcrumb-item">
         <Breadcrumb className="custom-crumb">
           <BreadcrumbItem><HiMiniBars3/>   <span>{course?.name}</span></BreadcrumbItem>
-          {secondToLastSegment === 'Assignments' ? (
-    <>
+          {secondToLastSegment === 'Assignments' || secondToLastSegment === 'Quizzes' ? 
+          (
+    <>  
       <BreadcrumbItem><span style={{color:'black'}}>{secondToLastSegment}</span></BreadcrumbItem>
+      {lastPath === 'Editor'? (
+      <BreadcrumbItem>
+      <span style={{color:'black'}}>Unnamed {secondToLastSegment}</span>
+      </BreadcrumbItem>
+      ):(
       <BreadcrumbItem>
       <span style={{color:'black'}}>{lastPath}</span>
-      </BreadcrumbItem>
+      </BreadcrumbItem>)}
     </>
   ) : (
     <BreadcrumbItem>
