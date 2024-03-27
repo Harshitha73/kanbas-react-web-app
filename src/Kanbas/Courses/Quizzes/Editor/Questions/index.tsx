@@ -13,6 +13,7 @@ function Questions() {
 
     function addQuestionEvent() {
         console.log("add question");
+        navigate(`/Kanbas/Courses/${courseId}/Quizzes/Editor/Questions/Editor`)
     }
     function addQuestionGroupEvent() {
         console.log("add question group");

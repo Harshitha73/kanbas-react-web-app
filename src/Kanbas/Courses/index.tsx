@@ -16,6 +16,7 @@ import { PiEyeglassesLight } from "react-icons/pi";
 import { FaCaretDown } from "react-icons/fa";
 import SmallNavigation from "../Navigation/smallNav";
 import QuizEditor from "./Quizzes/Editor";
+import QuestionsEditor from "./Quizzes/Editor/Questions/Editor";
 function Courses({ courses }: { courses: any[]; }) {
   const { courseId } = useParams();
   const location = useLocation();
@@ -97,6 +98,7 @@ const secondToLastSegment = paths.length >= 2 ? paths[paths.length - 2] : '';
             <Route path="Assignments/:assignmentId" element={<AssignmentEditor/>} />
             <Route path="Quizzes" element={<Quizzes/>} />
             <Route path="Quizzes/:quizId" element={<QuizEditor/>} />
+            <Route path="Quizzes/:quizId/Questions/Editor" element={<QuestionsEditor/>} />
             <Route path="Grades" element={<Grades/>} />
             <Route path="People" element={<h1>People</h1>} />
             <Route path="PanoptoVideo" element={<h1>Panopto Video</h1>} />
